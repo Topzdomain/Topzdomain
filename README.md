@@ -1,6 +1,6 @@
 [![MasterHead](https://miro.medium.com/v2/resize:fit:720/0*cPrF_XMe7U6atYgM.gif)](https://topzdomain.github.io/Portfolio/)
 
-<h1 align="center">Hi 👋, I'm Olajide Tony</h1>
+<h1 align="center">Hi 👋, I'm Tony Olajide</h1>
 <h3 align="center">A passionate and detail-oriented Data/Business Analyst</h3>
 <img align="right" alt="Coding" width="600" src="https://nodusanalytics.com/wp-content/uploads/2021/03/bi-dashboard-for-website.gif">
 
