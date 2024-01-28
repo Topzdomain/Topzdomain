@@ -1,4 +1,4 @@
-[![MasterHead](https://miro.medium.com/v2/resize:fit:720/0*cPrF_XMe7U6atYgM.gif)](https://topzdomain.github.io/Portfolio/)
+[![MasterHead](https://cdn.dribbble.com/users/1558759/screenshots/6301370/template_s.gif)](https://topzdomain.github.io/Portfolio/)
 
 <h1 align="center">Hi 👋, I'm Tony Olajide</h1>
 <h3 align="center">A passionate and detail-oriented Data/Business Analyst</h3>
