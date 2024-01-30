@@ -4,24 +4,30 @@
 <h2 align="center">I am into Cybersecurity</h2><br/>
 
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=topzdomain&label=Profile%20views&color=0e75b6&style=flat" alt="topzdomain" /> </p>
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=topzdomain&label=Profile%20views&color=0e75b6&style=flat" alt="topzdomain"/> </p>
 <!-- Section 2: Software Development Projects -->
 <div style="float: right; width: 50%;">
-  <h2>👨‍💻 Cybersecurity Projects:</h2>
-  - <b>Home lab With Active Directory (https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)</b>
+  <h2>🛡️🔐🌐👨‍💻 Cybersecurity Projects:</h2>
 </div>
 
-  - [Windows EventLog: Failed RDP Logins Source IP to full GeoData Conversion](https://github.com/joshmadakor1/Sentinel-Lab)
+  - [Home lab With Active Directory)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
+  - [(Metasploitable2 Exploits)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
+ <!--
   - [JWipe (Disk Wiping Utility)](https://github.com/joshmadakor1/Jwipe.PowerShell)
   - [Active Direictory Bulk User Creation](https://github.com/joshmadakor1/AD_PS)
   - [Active Directory Bulk User Creation](https://github.com/joshmadakor1/AD_PS)
   - [FIM (File Integrity Monitor)](https://github.com/joshmadakor1/PowerShell-Integrity-FIM)
-- <b>C# (.NET Desktop Applications)</b>
-  - [Ransomware Proof of Concept (Encrypter)](https://github.com/joshmadakor1/EncrypterPOC)
-  - [Ransomware Proof of Concept (Decrypter)](https://github.com/joshmadakor1/DecrypterPOC)
-  - [Keylogger with Email Capability](https://github.com/joshmadakor1/Key-Logger-With-Email)
-- <b>Python</b>
-  - [Package Delivery Application (Datastructures and Algorithms Demo)](https://github.com/joshmadakor1/Package-Delivery-Pathfinding-Algorithm)
+
+-->
+ 
+<div style="float: right; width: 50%;">
+   <h2>📊📈👨‍💻📉 Data Analytics Projects:</h2>
+</div>
+
+  - [Cyclistics-Ride-Share-Analysis)](https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis)
+  - [HR Dashboard)](https://github.com/Topzdomain/HR_DashBoard)
+  - [Data Cleaning with Excel](https://github.com/Topzdomain/Data-Cleaning-With-Excel)
+  - [KelvinCookieCompany)](https://github.com/Topzdomain/KelvinCookieCompany)
 
 <!-- <h2 class="invisible">📺 Popular YouTube Videos</h2>
 - [How to get into Cybersecurity Starting From Zero](https://www.youtube.com/watch?v=a83ASGn_V_s)
