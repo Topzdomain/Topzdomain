@@ -7,10 +7,8 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=topzdomain&label=Profile%20views&color=0e75b6&style=flat" alt="topzdomain" /> </p>
 <!-- Section 2: Software Development Projects -->
 <div style="float: right; width: 50%;">
-  <h2>👨‍💻 Software Development Projects:</h2>
-  - <b>Data Structures and Algorithms Practice (AlgoExpert)</b>
-    - [Practicing DS & Algos in Python](https://github.com/joshmadakor1/Algorithms-Practice)
- </b>
+  <h2>👨‍💻 Cybersecurity Projects:</h2>
+  - <b>Home lab With Active Directory (https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)</b>
 </div>
 
   - [Windows EventLog: Failed RDP Logins Source IP to full GeoData Conversion](https://github.com/joshmadakor1/Sentinel-Lab)
