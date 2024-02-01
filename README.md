@@ -11,7 +11,7 @@
 </div>
 
   - [Home lab With Active Directory)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
-  - [(Metasploitable2 Exploits)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
+  - [(Metasploitable2 Exploits)](https://github.com/Topzdomain/Metasploiter2-Exploits)
  <!--
   - [JWipe (Disk Wiping Utility)](https://github.com/joshmadakor1/Jwipe.PowerShell)
   - [Active Direictory Bulk User Creation](https://github.com/joshmadakor1/AD_PS)
