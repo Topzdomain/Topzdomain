@@ -10,15 +10,12 @@
   <h2>🛡️🔐🌐👨‍💻 Cybersecurity Projects:</h2>
 </div>
 
+  - [Setting Up A Wazuh SIEM on AWS)](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS)
+  - [Creating a Basic 3-Tier Architecture in AWS)](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up)
+  - [SSH into a server using public key instead of password)](https://github.com/Topzdomain/SSH-into-a-server-using-public-key)
   - [Home lab With Active Directory)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
   - [(Metasploitable2 Exploits)](https://github.com/Topzdomain/Metasploiter2-Exploits)
- <!--
-  - [JWipe (Disk Wiping Utility)](https://github.com/joshmadakor1/Jwipe.PowerShell)
-  - [Active Direictory Bulk User Creation](https://github.com/joshmadakor1/AD_PS)
-  - [Active Directory Bulk User Creation](https://github.com/joshmadakor1/AD_PS)
-  - [FIM (File Integrity Monitor)](https://github.com/joshmadakor1/PowerShell-Integrity-FIM)
 
--->
  
 <div style="float: right; width: 50%;">
    <h2>📊📈👨‍💻📉 Data Analytics Projects:</h2>
