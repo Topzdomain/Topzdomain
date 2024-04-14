@@ -10,10 +10,11 @@
   <h2>🛡️🔐🌐👨‍💻 Cybersecurity Projects:</h2>
 </div>
 
-  - [Setting Up A Wazuh SIEM on AWS)](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS)
-  - [Creating a Basic 3-Tier Architecture in AWS)](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up)
-  - [SSH into a server using public key instead of password)](https://github.com/Topzdomain/SSH-into-a-server-using-public-key)
-  - [Home lab With Active Directory)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
+  - [(Using Nessus for Vulnerability Assessment and Remediation)](https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation)
+  - [(Setting Up A Wazuh SIEM on AWS)](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS)
+  - [(Creating a Basic 3-Tier Architecture in AWS)](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up)
+  - [(SSH into a server using public key instead of password)](https://github.com/Topzdomain/SSH-into-a-server-using-public-key)
+  - [(Home lab With Active Directory)](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)
   - [(Metasploitable2 Exploits)](https://github.com/Topzdomain/Metasploiter2-Exploits)
 
  
