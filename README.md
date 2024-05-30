@@ -10,7 +10,8 @@
   <h2>🛡️🔐🌐👨‍💻 Cybersecurity Projects:</h2>
 </div>
 
-  - [(Internet Access to a Private Subnet Using NAT Instance)](https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance/tree/main)
+  - [(Accessing a Private Subnet Without a Bastion Host)](https://github.com/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host)
+  - [(Internet Access to a Private Subnet Using NAT Instance)](https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance)
   - [(Using Nessus for Vulnerability Assessment and Remediation)](https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation)
   - [(Setting Up A Wazuh SIEM on AWS)](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS)
   - [(Creating a Basic 3-Tier Architecture in AWS)](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up)
