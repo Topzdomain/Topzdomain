@@ -10,6 +10,7 @@
   <h2>🛡️🔐🌐👨‍💻 Cybersecurity Projects:</h2>
 </div>
 
+  - [(Setting Up an RDS Instance With a Read Replica)](https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica)
   - [(Setting Up an RDS Instance With Failover Tolereance)](https://github.com/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance)
   - [(Accessing a Private Subnet Without a Bastion Host)](https://github.com/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host)
   - [(Internet Access to a Private Subnet Using NAT Instance)](https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance)
