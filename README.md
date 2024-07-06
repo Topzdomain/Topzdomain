@@ -27,7 +27,7 @@ Here are some of my notable cybersecurity projects. If you find them useful or l
   [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Setting-up-Wazuh-on-AWS?style=social)](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS/stargazers)
   
 - [**Creating a Basic 3-Tier Architecture in AWS**](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up): Built a basic 3-tier architecture in AWS.
- (https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up/stargazers)
+  [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up?style=social)](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up/stargazers)
   
 - [**SSH into a server using public key instead of password**](https://github.com/Topzdomain/SSH-into-a-server-using-public-key): Secured SSH access using public key authentication.
   [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/SSH-into-a-server-using-public-key?style=social)](https://github.com/Topzdomain/SSH-into-a-server-using-public-key/stargazers)
