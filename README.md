@@ -8,7 +8,10 @@
 ## 🛡️ Cybersecurity Projects:
 Here are some of my notable cybersecurity projects. If you find them useful or like what I did, please give a star ⭐!
 
-- [**Creating and Moving an EBS Volume From One AZ to Another**](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another/blob/main/README.md): Creating and Moving an EBS Volume From One AZ to Another
+- [**Granting Identity Based Access to S3 Bucket**](https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket): Granting Identity Based Access to S3 Bucket
+  [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket?style=social)](https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket)
+
+- [**Creating and Moving an EBS Volume From One AZ to Another**](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another): Creating and Moving an EBS Volume From One AZ to Another
   [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another?style=social)](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another)
 
 - [**Accessing An S3 Bucket Via S3 Gateway Endpoint**](https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint): Accessing An S3 Bucket Via S3 Gateway Endpoint
