@@ -8,7 +8,11 @@
 ## 🛡️ Cybersecurity Projects:
 Here are some of my notable cybersecurity projects. If you find them useful or like what I did, please give a star ⭐!
 
+- [**Creating and Moving an EBS Volume From One AZ to Another**](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another/blob/main/README.md): Creating and Moving an EBS Volume From One AZ to Another
+  [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another?style=social)](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another)
+
 - [**Accessing An S3 Bucket Via S3 Gateway Endpoint**](https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint): Accessing An S3 Bucket Via S3 Gateway Endpoint
+  [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint?style=social)](https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint)
 
 - [**Setting Up an RDS Instance With a Read Replica**](https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica): Configured RDS with read replica for high availability.
   [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica?style=social)](https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica/stargazers)
