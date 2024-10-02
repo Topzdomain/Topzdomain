@@ -8,8 +8,11 @@
 ## 🛡️ Cybersecurity Projects:
 Here are some of my notable cybersecurity projects. If you find them useful or like what I did, please give a star ⭐!
 
+- [**Monitoring Workloads On AWS Using AWS GuardDuty**](https://github.com/Topzdomain/VPC-Peering-Connection): Monitoring Workloads On AWS Using AWS GuardDuty
+  [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty?style=social)](https://github.com/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty)
+
 - [**VPC Peering Connection**](https://github.com/Topzdomain/VPC-Peering-Connection): VPC Peering Connection
-[![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/VPC-Peering-Connection?style=social)](https://github.com/Topzdomain/VPC-Peering-Connection)
+  [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/VPC-Peering-Connection?style=social)](https://github.com/Topzdomain/VPC-Peering-Connection)
 
 - [**Granting Identity Based Access to S3 Bucket**](https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket): Granting Identity Based Access to S3 Bucket
   [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket?style=social)](https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket)
