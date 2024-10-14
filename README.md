@@ -8,7 +8,7 @@
 ## 🛡️ Cybersecurity Projects:
 Here are some of my notable cybersecurity projects. If you find them useful or like what I did, please give a star ⭐!
 
-- [**INTEGRATING PHISHING URL DETECTION WITH GUARDDUTY'S MALWARE PROTECTION**](https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION): INTEGRATING PHISHING URL DETECTION WITH GUARDDUTY'S S3 MALWARE PROTECTION
+- [**INTEGRATING PHISHING URL DETECTION WITH GUARDDUTY'S MALWARE PROTECTION**](https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION): Integrating Phishing URL Detection with GuardDuty's S3 Malware Protection
   [![GitHub Stars](https://img.shields.io/github/stars/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION?style=social)](https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION)
 
 - [**Monitoring Workloads On AWS Using AWS GuardDuty**](https://github.com/Topzdomain/VPC-Peering-Connection): Monitoring Workloads On AWS Using AWS GuardDuty
