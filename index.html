@@ -3,408 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Defensive Meta Tags -->
+    <!-- Security Hardening Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <!-- Basic CSP fallback (Ensure the _headers file is also present for full protection) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'none'; frame-ancestors 'none';">
-    <title>Hi, I am Tony | Cloud Security, Cybersecurity & Penetration Testing</title>
+    <title>Tony | Security Engineer Portfolio</title>
     <style>
-        /* Base Hardened Styling */
+        :root {
+            --primary-blue: #0969da;
+            --bg-color: #f6f8fa;
+            --text-main: #1f2328;
+            --text-sub: #57606a;
+            --border-color: #d0d7de;
+        }
+
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
             margin: 0; 
             padding: 0; 
-            color: #1a1f23;
-            background-color: #f0f2f5; 
+            color: var(--text-main);
+            background-color: var(--bg-color); 
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 2rem auto;
             background-color: #ffffff;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 0; /* Hero image will touch edges */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
 
-        /* Wave Animation for Hand Emoji */
+        .content-padding { padding: 2.5rem; }
+
+        /* Hero Image */
+        .hero-img { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: cover; 
+            display: block;
+        }
+
+        /* Hand Wave Animation */
         @keyframes wave {
-          0% { transform: rotate( 0.0deg) }
-          10% { transform: rotate(14.0deg) }
-          20% { transform: rotate(-8.0deg) }
-          30% { transform: rotate(14.0deg) }
-          40% { transform: rotate(-4.0deg) }
-          50% { transform: rotate(10.0deg) }
-          60% { transform: rotate( 0.0deg) }
-         100% { transform: rotate( 0.0deg) }
+            0% { transform: rotate( 0.0deg) }
+            10% { transform: rotate(14.0deg) }
+            20% { transform: rotate(-8.0deg) }
+            30% { transform: rotate(14.0deg) }
+            40% { transform: rotate(-4.0deg) }
+            50% { transform: rotate(10.0deg) }
+            60% { transform: rotate( 0.0deg) }
+            100% { transform: rotate( 0.0deg) }
         }
-        
         .waving-hand {
-          animation-name: wave;
-          animation-duration: 2.5s;
-          animation-iteration-count: infinite;
-          transform-origin: 70% 70%;
-          display: inline-block;
-          font-size: 2.5rem;
+            display: inline-block;
+            animation: wave 2.5s infinite;
+            transform-origin: 70% 70%;
         }
 
-        h1 { text-align: center; font-size: 2.8rem; margin-bottom: 0.2rem; color: #050505; }
-        .subtitle { text-align: center; color: #65676b; margin-bottom: 3rem; font-size: 1.1rem; font-weight: 400; }
-        h2 { border-bottom: 2px solid #f0f2f5; padding-bottom: 12px; margin-top: 3rem; font-size: 1.8rem; }
-
-        /* General Content Styling */
-        p, li { font-size: 1.05rem; color: #303030; margin-bottom: 1rem; }
-        ul { padding-left: 1.5rem; margin-bottom: 2rem; }
+        h1 { text-align: center; margin-top: 1.5rem; font-size: 2.2rem; }
+        .subtitle { text-align: center; color: var(--text-sub); font-weight: 500; margin-bottom: 2rem; }
+        h2 { border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; margin-top: 3rem; }
 
         /* Project Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 1.5rem 0;
         }
 
         .card {
-            border: 1px solid #e4e6eb;
-            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-color: #0969da;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
         }
 
-        .card-img { width: 100%; height: 200px; object-fit: cover; }
-        .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
-        
-        .card-title { 
-            font-size: 1.25rem; 
-            font-weight: 700; 
-            color: #0969da; 
-            text-decoration: none;
-            margin-bottom: 12px;
-        }
+        .card-img { width: 100%; height: 180px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card-title { font-weight: 700; color: var(--primary-blue); text-decoration: none; display: block; margin-bottom: 10px; }
+        .card-desc { font-size: 0.95rem; color: var(--text-sub); }
 
-        .card-desc { font-size: 1rem; color: #4b4b4b; margin-bottom: 20px; flex-grow: 1; }
+        /* Tech Arsenal Badges */
+        .tech-stack { text-align: center; margin: 2rem 0; }
+        .tech-stack img { margin: 5px; height: 35px; transition: transform 0.2s; }
+        .tech-stack img:hover { transform: scale(1.15); }
 
-        .card-footer { 
-            border-top: 1px solid #f0f2f5; 
-            padding-top: 15px; 
-            display: flex; 
-            justify-content: space-between;
-        }
-
-        .more-projects { text-align: center; font-style: italic; margin-top: 0; margin-bottom: 3rem; }
-
-        /* Tech Stack */
-        .tech-stack { text-align: center; margin-bottom: 3rem; }
-        .tech-stack img { margin: 8px; transition: transform 0.2s; }
-        .tech-stack img:hover { transform: scale(1.1); }
-
-        /* New Security Metrics Section (Qualitative representation) */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Security Metrics */
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
+            margin: 2rem 0;
         }
-
-        .metric-card {
-            background-color: #f6f8fa;
-            padding: 20px;
-            border-radius: 8px;
+        .metric-box {
             text-align: center;
-            border: 1px solid #d0d7de;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            flex: 1;
+            min-width: 200px;
         }
-        
-        .metric-title { font-weight: bold; font-size: 1.1rem; color: #1F2328; margin-bottom: 10px; display: block; }
-        .metric-status { color: #0969da; font-weight: 600; font-size: 0.95rem; }
-        .metric-status-good { color: #1a7f37; } /* Green */
+        .metric-icon { font-size: 2rem; margin-bottom: 10px; }
 
-        /* Contact & Footer */
-        .contact-section p { display: flex; align-items: center; justify-content: center; gap: 10px; }
-        a { color: #0969da; text-decoration: none; transition: color 0.2s; }
-        a:hover { text-decoration: underline; color: #0747a6;}
+        .footer-links { text-align: center; padding: 2rem; border-top: 1px solid #f0f2f5; }
+        a { color: var(--primary-blue); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
 
         @media (max-width: 768px) {
-            .container { margin: 0; border-radius: 0; padding: 1.2rem; }
-            h1 { font-size: 2rem; }
-            .subtitle { font-size: 1rem; }
+            .container { margin: 0; border-radius: 0; }
+            .hero-img { height: 250px; }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        
-        <!-- 1. Header & Introduction -->
-        <h1>Hi, I am Tony <span class="waving-hand">👋</span></h1>
-        <div class="subtitle">Cloud Security || Cybersecurity || Penetration Testing Enthusiast</div>
+        <!-- Hero Banner -->
+        <img class="hero-img" src="https://cdn.pixabay.com/photo/2019/03/27/10/35/cyber-4084714_1280.jpg" alt="Security Banner">
 
-        <!-- 2. About Me -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                As a Security Engineer, I focus on the continuous cycle of threat identification, risk assessment, and proactive defense. My work bridges the gap between infrastructure deployment and secure operations, specialized in identifying vulnerabilities within complex cloud environments and mitigating risks before they can be exploited. I am passionate about applying defensive-in-depth principles and automation to build resilient security architectures.
-            </p>
-        </section>
+        <div class="content-padding">
+            <!-- 1. Header -->
+            <h1>Hi, I am Tony <span class="waving-hand">👋</span></h1>
+            <div class="subtitle">Cloud Security || Cybersecurity || Penetration Testing Enthusiast</div>
 
-        <!-- 3. Cybersecurity Projects -->
-        <section id="projects">
-            <h2>Cybersecurity Projects 🛡️</h2>
-            <p>Here are some of my notable cybersecurity projects. Click on any card to view the repository!</p>
-            
-            <div class="project-grid">
+            <!-- 2. About Me -->
+            <section>
+                <h2>About Me</h2>
+                <p>
+                    As a Security Engineer, I focus on the continuous cycle of threat identification, risk assessment, and proactive defense. My work bridges the gap between infrastructure deployment and secure operations, specialized in identifying vulnerabilities within complex cloud environments and mitigating risks before they can be exploited. I am passionate about applying defensive-in-depth principles and automation to build resilient security architectures.
+                </p>
+            </section>
+
+            <!-- 3. Projects -->
+            <section>
+                <h2>Cybersecurity Projects 🛡️</h2>
+                <p>Here are some of my notable cybersecurity projects. Click on any card to view the repository!</p>
                 
-                <article class="card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Cloud Security">
-                    <div class="card-content">
-                        <!-- Sec Hardening: Added rel="noopener noreferrer" -->
-                        <a href="https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION" class="card-title" target="_blank" rel="noopener noreferrer">S3 Phishing Detection</a>
-                        <div class="card-desc">Advanced integration of AWS GuardDuty Malware Protection with automated phishing URL analysis.</div>
-                        <div class="card-footer">
-                            <img src="https://img.shields.io/github/stars/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION?style=flat&color=0969da" alt="Stars">
+                <div class="project-grid">
+                    <article class="card">
+                        <img class="card-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="S3 Security">
+                        <div class="card-content">
+                            <a href="https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION" class="card-title" target="_blank" rel="noopener noreferrer">S3 Phishing Detection</a>
+                            <div class="card-desc">Integrating Phishing URL Detection with GuardDuty Malware Protection to enhance bucket security.</div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article class="card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="SIEM Monitoring">
-                    <div class="card-content">
-                        <a href="https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS" class="card-title" target="_blank" rel="noopener noreferrer">Wazuh SIEM Deployment</a>
-                        <div class="card-desc">Architecting a scalable Wazuh SIEM cluster on AWS for real-time threat intelligence.</div>
-                        <div class="card-footer">
-                            <img src="https://img.shields.io/github/stars/Topzdomain/Setting-up-Wazuh-on-AWS?style=flat&color=0969da" alt="Stars">
+                    <article class="card">
+                        <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Wazuh SIEM">
+                        <div class="card-content">
+                            <a href="https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS" class="card-title" target="_blank" rel="noopener noreferrer">Wazuh SIEM on AWS</a>
+                            <div class="card-desc">Deployed and configured Wazuh SIEM for enterprise-grade security monitoring and log analysis.</div>
                         </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="https://images.unsplash.com/photo-1614064641913-a520faff3ddf?auto=format&fit=crop&w=600&q=80" alt="Vulnerability Scanner">
+                        <div class="card-content">
+                            <a href="https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation" class="card-title" target="_blank" rel="noopener noreferrer">Nessus Assessment</a>
+                            <div class="card-desc">Comprehensive vulnerability scans and remediation workflows using Tenable Nessus.</div>
+                        </div>
+                    </article>
+                </div>
+                <p style="text-align: center;">
+                    <em>To see more of my projects, visit my <a href="https://github.com/Topzdomain" target="_blank" rel="noopener noreferrer">GitHub page</a>.</em>
+                </p>
+            </section>
+
+            <!-- 4. Currently Working On -->
+            <section>
+                <h2>What I'm Currently Working On 🚀</h2>
+                <ul>
+                    <li>Exploring new technologies in cloud security and cybersecurity.</li>
+                    <li>Preparing for several advanced industry certification exams.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Technical Arsenal -->
+            <section>
+                <h2>Technical Arsenal 🛠️</h2>
+                <div class="tech-stack">
+                    <!-- Added Burp, OWASP, Python first as requested -->
+                    <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=portswigger&logoColor=white" alt="Burp Suite">
+                    <img src="https://img.shields.io/badge/OWASP_Zap-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP Zap">
+                    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                    <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS">
+                    <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali Linux">
+                    <img src="https://img.shields.io/badge/Wazuh-4E2A8E?style=for-the-badge&logo=wazuh&logoColor=white" alt="Wazuh">
+                    <img src="https://img.shields.io/badge/Nessus-00A1E0?style=for-the-badge&logo=tenable&logoColor=white" alt="Nessus">
+                </div>
+            </section>
+
+            <!-- 6. Security Metrics -->
+            <section>
+                <h2>Security Metrics 📊</h2>
+                <div class="metrics-container">
+                    <div class="metric-box">
+                        <div class="metric-icon">🛡️</div>
+                        <strong>Threat Detection</strong>
+                        <p>Real-time monitoring</p>
                     </div>
-                </article>
+                    <div class="metric-box">
+                        <div class="metric-icon">🔍</div>
+                        <strong>Vulnerability Coverage</strong>
+                        <p>100% Asset Visibility</p>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-icon">⚡</div>
+                        <strong>Response Time</strong>
+                        <p>Automated Mitigation</p>
+                    </div>
+                </div>
+            </section>
 
-                <article class="card">
-                    <img class="card-img" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" alt="Vulnerability AssessmentIt is definitely supposed to be so! The "jam-packed" appearance and broken links are because **web browsers only understand HTML, not Markdown**.
-
-Markdown uses shortcuts like `##` and `[]()` that are intended for platforms like GitHub to "bake" into HTML. Browsers treat raw Markdown links as unformatted text, causing the layout to collapse.
-
-I have completely revamped your code, converting all Markdown into proper HTML (`<a>`, `<ul>`, `<li>` tags) and adding clean CSS styling to create a professional, spaced-out, and mobile-responsive layout.
-
-### **The Revamped and Styled Code**
-Copy all the code below and replace the entire content of your `index.html` file in GitHub with it.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tony's Portfolio</title>
-    <style>
-        /* Base Styling */
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 2rem; 
-            color: #24292f;
-            background-color: #f6f8fa; /* Light grey background like GitHub */
-        }
-        
-        /* Main Container to separate from background */
-        .container {
-            background-color: #ffffff;
-            padding: 2rem 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        /* Typography & Headings */
-        h1, h2 { 
-            border-bottom: 1px solid #d0d7de; 
-            padding-bottom: .3em; 
-            margin-top: 1.5em;
-        }
-        h1 { border-bottom: none; text-align: center; margin-bottom: 0; }
-        .subtitle { text-align: center; color: #57606a; margin-top: 0.5em; margin-bottom: 2em; }
-        
-        /* Proper Links & Lists */
-        a { color: #0969da; text-decoration: none; font-weight: 600; }
-        a:hover { text-decoration: underline; }
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 1rem; } /* Adds spacing between projects */
-        
-        /* Images and Badges */
-        img { max-width: 100%; height: auto; }
-        .hero-img { border-radius: 10px; width: 100%; object-fit: cover; max-height: 300px; margin-bottom: 1rem; }
-        .badge { vertical-align: middle; margin-left: 8px; } /* Aligns the star badge */
-        .tech-stack img { margin: 5px; } /* Spaces out the tech badges */
-        
-        /* Stats Section Layout */
-        .stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <a href="[https://topzdomain.github.io/Portfolio/](https://topzdomain.github.io/Portfolio/)" target="_blank">
-            <img class="hero-img" src="[https://cdn.pixabay.com/photo/2019/03/27/10/35/cyber-4084714_1280.jpg](https://cdn.pixabay.com/photo/2019/03/27/10/35/cyber-4084714_1280.jpg)" alt="Cyber Security Background Banner">
-        </a>
-
-        <!-- Header -->
-        <h1>Hi 👋, I'm Tony</h1>
-        <div class="subtitle">👨‍💻🔓 Cloud Security || Cybersecurity || Penetration Testing Enthusiast</div>
-
-        <p style="text-align: center;"> 
-            <img src="[https://komarev.com/ghpvc/?username=topzdomain&label=Profile%20views&color=0e75b6&style=flat](https://komarev.com/ghpvc/?username=topzdomain&label=Profile%20views&color=0e75b6&style=flat)" alt="Profile Views"/> 
-        </p>
-
-        <!-- Cybersecurity Projects -->
-        <h2>🛡️ Cybersecurity Projects:</h2>
-        <p>Here are some of my notable cybersecurity projects. If you find them useful or like what I did, please give a star ⭐!</p>
-        
-        <ul>
-            <li>
-                <a href="[https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION](https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION)" target="_blank">INTEGRATING PHISHING URL DETECTION WITH GUARDDUTY'S MALWARE PROTECTION</a>: Integrating Phishing URL Detection with GuardDuty's S3 Malware Protection
-                <a href="[https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION](https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION?style=social](https://img.shields.io/github/stars/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/VPC-Peering-Connection](https://github.com/Topzdomain/VPC-Peering-Connection)" target="_blank">Monitoring Workloads On AWS Using AWS GuardDuty</a>: Monitoring Workloads On AWS Using AWS GuardDuty
-                <a href="[https://github.com/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty](https://github.com/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty?style=social](https://img.shields.io/github/stars/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/VPC-Peering-Connection](https://github.com/Topzdomain/VPC-Peering-Connection)" target="_blank">VPC Peering Connection</a>: VPC Peering Connection
-                <a href="[https://github.com/Topzdomain/VPC-Peering-Connection](https://github.com/Topzdomain/VPC-Peering-Connection)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/VPC-Peering-Connection?style=social](https://img.shields.io/github/stars/Topzdomain/VPC-Peering-Connection?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket](https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket)" target="_blank">Granting Identity Based Access to S3 Bucket</a>: Granting Identity Based Access to S3 Bucket
-                <a href="[https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket](https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket?style=social](https://img.shields.io/github/stars/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another)" target="_blank">Creating and Moving an EBS Volume From One AZ to Another</a>: Creating and Moving an EBS Volume From One AZ to Another
-                <a href="[https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another](https://github.com/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another?style=social](https://img.shields.io/github/stars/Topzdomain/Creating-and-Moving-an-EBS-Volume-From-One-AZ-to-Another?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint](https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint)" target="_blank">Accessing An S3 Bucket Via S3 Gateway Endpoint</a>: Accessing An S3 Bucket Via S3 Gateway Endpoint
-                <a href="[https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint](https://github.com/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint?style=social](https://img.shields.io/github/stars/Topzdomain/An-S3-Bucket-Accessed-Via-An-S3-Gateway-Endpoint?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica](https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica)" target="_blank">Setting Up an RDS Instance With a Read Replica</a>: Configured RDS with read replica for high availability.
-                <a href="[https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica/stargazers](https://github.com/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica?style=social](https://img.shields.io/github/stars/Topzdomain/Setting-Up-an-RDS-Instance-With-Read-Replica?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance](https://github.com/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance)" target="_blank">Setting Up an RDS Instance With Failover Tolerance</a>: Ensured failover tolerance for RDS instances.
-                <a href="[https://github.com/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance/stargazers](https://github.com/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance?style=social](https://img.shields.io/github/stars/Topzdomain/Setting-Up-An-RDS-With-Failover-Tolerance?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host](https://github.com/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host)" target="_blank">Accessing a Private Subnet Without a Bastion Host</a>: Demonstrated secure access methods for private subnets.
-                <a href="[https://github.com/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host/stargazers](https://github.com/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host?style=social](https://img.shields.io/github/stars/Topzdomain/Accessing-a-Private-Subnet-Without-a-Bastion-Host?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance](https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance)" target="_blank">Internet Access to a Private Subnet Using NAT Instance</a>: Set up NAT instance for internet access in private subnets.
-                <a href="[https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance/stargazers](https://github.com/Topzdomain/Internet-Access-Through-NAT-Instance/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Internet-Access-Through-NAT-Instance?style=social](https://img.shields.io/github/stars/Topzdomain/Internet-Access-Through-NAT-Instance?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation](https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation)" target="_blank">Using Nessus for Vulnerability Assessment and Remediation</a>: Conducted vulnerability assessments using Nessus.
-                <a href="[https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation/stargazers](https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation?style=social](https://img.shields.io/github/stars/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS)" target="_blank">Setting Up A Wazuh SIEM on AWS</a>: Deployed Wazuh SIEM for security monitoring.
-                <a href="[https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS/stargazers](https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Setting-up-Wazuh-on-AWS?style=social](https://img.shields.io/github/stars/Topzdomain/Setting-up-Wazuh-on-AWS?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up)" target="_blank">Creating a Basic 3-Tier Architecture in AWS</a>: Built a basic 3-tier architecture in AWS.
-                <a href="[https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up/stargazers](https://github.com/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up?style=social](https://img.shields.io/github/stars/Topzdomain/Creating-VPC-Subnet-Internet-Gateway-Route-Tables-and-Linking-Them-up?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/SSH-into-a-server-using-public-key](https://github.com/Topzdomain/SSH-into-a-server-using-public-key)" target="_blank">SSH into a server using public key instead of password</a>: Secured SSH access using public key authentication.
-                <a href="[https://github.com/Topzdomain/SSH-into-a-server-using-public-key/stargazers](https://github.com/Topzdomain/SSH-into-a-server-using-public-key/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/SSH-into-a-server-using-public-key?style=social](https://img.shields.io/github/stars/Topzdomain/SSH-into-a-server-using-public-key?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory)" target="_blank">Home lab With Active Directory</a>: Set up a home lab with Active Directory for user management.
-                <a href="[https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory/stargazers](https://github.com/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory?style=social](https://img.shields.io/github/stars/Topzdomain/Cybersecurity-Home-Lab-with-Active-Directory?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Metasploiter2-Exploits](https://github.com/Topzdomain/Metasploiter2-Exploits)" target="_blank">Metasploitable2 Exploits</a>: Explored vulnerabilities using Metasploitable2.
-                <a href="[https://github.com/Topzdomain/Metasploiter2-Exploits/stargazers](https://github.com/Topzdomain/Metasploiter2-Exploits/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Metasploiter2-Exploits?style=social](https://img.shields.io/github/stars/Topzdomain/Metasploiter2-Exploits?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-        </ul>
-
-        <!-- Data Analytics Section -->
-        <h2>📊 Data Analytics Projects:</h2>
-        <p>Here are some of my data analytics projects:</p>
-        <ul>
-            <li>
-                <a href="[https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis](https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis)" target="_blank">Cyclistics-Ride-Share-Analysis</a>: Analyzed ride-share data for Cyclistic.
-                <a href="[https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis/stargazers](https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Cyclistic-Ride-Share-Analysis?style=social](https://img.shields.io/github/stars/Topzdomain/Cyclistic-Ride-Share-Analysis?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/HR_DashBoard](https://github.com/Topzdomain/HR_DashBoard)" target="_blank">HR Dashboard</a>: Created a comprehensive HR dashboard.
-                <a href="[https://github.com/Topzdomain/HR_DashBoard/stargazers](https://github.com/Topzdomain/HR_DashBoard/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/HR_DashBoard?style=social](https://img.shields.io/github/stars/Topzdomain/HR_DashBoard?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/Data-Cleaning-With-Excel](https://github.com/Topzdomain/Data-Cleaning-With-Excel)" target="_blank">Data Cleaning with Excel</a>: Performed data cleaning using Excel.
-                <a href="[https://github.com/Topzdomain/Data-Cleaning-With-Excel/stargazers](https://github.com/Topzdomain/Data-Cleaning-With-Excel/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/Data-Cleaning-With-Excel?style=social](https://img.shields.io/github/stars/Topzdomain/Data-Cleaning-With-Excel?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-            <li>
-                <a href="[https://github.com/Topzdomain/KelvinCookieCompany](https://github.com/Topzdomain/KelvinCookieCompany)" target="_blank">KelvinCookieCompany</a>: Analyzed sales data for Kelvin Cookie Company.
-                <a href="[https://github.com/Topzdomain/KelvinCookieCompany/stargazers](https://github.com/Topzdomain/KelvinCookieCompany/stargazers)" target="_blank"><img class="badge" src="[https://img.shields.io/github/stars/Topzdomain/KelvinCookieCompany?style=social](https://img.shields.io/github/stars/Topzdomain/KelvinCookieCompany?style=social)" alt="GitHub Stars Badge"></a>
-            </li>
-        </ul>
-
-        <!-- Goals -->
-        <h2>🌟 What I'm Currently Working On:</h2>
-        <ul>
-            <li>Enhancing my cybersecurity skills through hands-on labs and projects.</li>
-            <li>Exploring new technologies in cloud security</li>
-            <li>Preparing for the AWS Solutions Architect Exam</li>
-        </ul>
-
-        <!-- Tech Stack -->
-        <h2>🛠️ Languages and Tools:</h2>
-        <p class="tech-stack">
-            <img src="[https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)" alt="AWS Shield">
-            <img src="[https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white](https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)" alt="Kali Linux Shield">
-            <img src="[https://img.shields.io/badge/Oracle%20VM-F80000?style=for-the-badge&logo=oracle&logoColor=white](https://img.shields.io/badge/Oracle%20VM-F80000?style=for-the-badge&logo=oracle&logoColor=white)" alt="Oracle VM Shield">
-            <img src="[https://img.shields.io/badge/Tenable%20Nessus-00A1E0?style=for-the-badge&logo=tenable&logoColor=white](https://img.shields.io/badge/Tenable%20Nessus-00A1E0?style=for-the-badge&logo=tenable&logoColor=white)" alt="Nessus Shield">
-            <img src="[https://img.shields.io/badge/Wazuh-4E2A8E?style=for-the-badge&logo=wazuh&logoColor=white](https://img.shields.io/badge/Wazuh-4E2A8E?style=for-the-badge&logo=wazuh&logoColor=white)" alt="Wazuh Shield">
-            <img src="[https://img.shields.io/badge/AWS%20Prowler-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white](https://img.shields.io/badge/AWS%20Prowler-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)" alt="Prowler Shield">
-            <img src="[https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)" alt="HTML5 Shield">
-            <img src="[https://img.shields.io/badge/Metasploit-4E2A8E?style=for-the-badge&logo=metasploit&logoColor=white](https://img.shields.io/badge/Metasploit-4E2A8E?style=for-the-badge&logo=metasploit&logoColor=white)" alt="Metasploit Shield">
-            <img src="[https://img.shields.io/badge/Nmap-8E4E2A?style=for-the-badge&logo=nmap&logoColor=white](https://img.shields.io/badge/Nmap-8E4E2A?style=for-the-badge&logo=nmap&logoColor=white)" alt="Nmap Shield">
-        </p>
-
-        <!-- Stats Section -->
-        <h2>📊 GitHub Stats:</h2>
-        <div class="stats-grid">
-            <img src="[https://github-readme-stats.vercel.app/api/top-langs?username=topzdomain&show_icons=true&locale=en&layout=compact](https://github-readme-stats.vercel.app/api/top-langs?username=topzdomain&show_icons=true&locale=en&layout=compact)" alt="top languages chart" />
-            <img src="[https://github-readme-stats.vercel.app/api?username=topzdomain&show_icons=true&locale=en](https://github-readme-stats.vercel.app/api?username=topzdomain&show_icons=true&locale=en)" alt="general github stats" />
-            <img src="[https://github-readme-streak-stats.herokuapp.com/?user=topzdomain](https://github-readme-streak-stats.herokuapp.com/?user=topzdomain)&" alt="github streak stats" />
+            <!-- 7. Contact -->
+            <div class="footer-links">
+                <h2>Contact & Feedback 💬</h2>
+                <p>Reach out for collaborations or security consultations:</p>
+                <p>
+                    <a href="https://linkedin.com/in/tope-tony" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a> | 
+                    <a href="mailto:your-email@example.com">Email Me</a>
+                </p>
+            </div>
         </div>
-
-        <!-- Footer / Feedback -->
-        <h2>💬 Feedback & Contact:</h2>
-        <ul>
-            <li>If you have any questions or suggestions, please open an issue or contact me!</li>
-            <li>If you like my work, please give a star ⭐ rating to my repositories.</li>
-        </ul>
-        
-        <p style="text-align: center; margin-top: 2rem;">
-            <a href="[https://linkedin.com/in/tope-tony](https://linkedin.com/in/tope-tony)" target="_blank">Connect with me on LinkedIn</a>
-        </p>
-        
     </div>
+
 </body>
 </html>
