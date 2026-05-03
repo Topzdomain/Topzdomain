@@ -3,121 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tony's Portfolio</title>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Tony | Cloud & Cybersecurity Portfolio</title>
     <style>
-        /* Base Styling */
+        /* Modern Hardened Styling */
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
             margin: 0; 
             padding: 0; 
-            color: #24292f;
-            background-color: #f6f8fa; 
+            color: #1a1f23;
+            background-color: #f0f2f5; 
         }
         
-        /* Main Container */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 2rem auto;
             background-color: #ffffff;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* Hero Image - Made Fuller */
         .hero-img { 
-            border-radius: 10px; 
+            border-radius: 12px; 
             width: 100%; 
-            height: 450px; /* Taller and fuller */
+            height: 400px; 
             object-fit: cover; 
             margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: block;
         }
 
-        /* Typography & Headings */
-        h1, h2 { margin-top: 1.5em; color: #1F2328; }
-        h1 { text-align: center; margin-bottom: 0; font-size: 2.5rem; }
-        h2 { border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-bottom: 20px;}
-        .subtitle { text-align: center; color: #57606a; margin-top: 0.5em; margin-bottom: 2em; font-size: 1.1rem;}
-        
-        /* Links & Images */
-        a { color: #0969da; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .tech-stack img { margin: 5px; }
+        h1 { text-align: center; font-size: 2.8rem; margin-bottom: 0.2rem; color: #050505; }
+        .subtitle { text-align: center; color: #65676b; margin-bottom: 3rem; font-size: 1.2rem; font-weight: 400; }
+        h2 { border-bottom: 2px solid #f0f2f5; padding-bottom: 12px; margin-top: 2rem; font-size: 1.8rem; }
 
-        /* --- NEW: CSS Grid Project Cards --- */
+        /* Project Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 1.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 4rem;
         }
 
         .card {
-            border: 1px solid #e1e4e8;
-            border-radius: 10px;
+            border: 1px solid #e4e6eb;
+            border-radius: 12px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            background: #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: #fff;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: #0969da;
         }
 
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 1px solid #e1e4e8;
-        }
-
-        .card-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .card-desc {
-            font-size: 0.95rem;
-            color: #57606a;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #f0f2f5;
-            padding-top: 15px;
-        }
+        .card-img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
         
-        /* Stats Section */
-        .stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 1.5rem;
+        .card-title { 
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            color: #0969da; 
+            text-decoration: none;
+            margin-bottom: 12px;
         }
 
-        /* Mobile responsiveness */
+        .card-desc { font-size: 1rem; color: #4b4b4b; margin-bottom: 20px; flex-grow: 1; }
+
+        .card-footer { 
+            border-top: 1px solid #f0f2f5; 
+            padding-top: 15px; 
+            display: flex; 
+            justify-content: space-between;
+        }
+
+        /* Stats & Footer */
+        .stats-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 2rem; }
+        .stats-grid img { max-width: 100%; height: auto; border-radius: 8px; }
+
+        .tech-stack { text-align: center; margin-bottom: 3rem; }
+        .tech-stack img { margin: 8px; transition: transform 0.2s; }
+        .tech-stack img:hover { transform: scale(1.1); }
+
         @media (max-width: 768px) {
-            .container { margin: 0; border-radius: 0; padding: 1.5rem; }
+            .container { margin: 0; border-radius: 0; padding: 1.2rem; }
             .hero-img { height: 250px; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -125,162 +101,66 @@
     <div class="container">
         
         <!-- Hero Section -->
-        <a href="https://topzdomain.github.io/Portfolio/" target="_blank">
-            <img class="hero-img" src="https://cdn.pixabay.com/photo/2019/03/27/10/35/cyber-4084714_1280.jpg" alt="Cyber Security Background">
-        </a>
+        <img class="hero-img" src="https://cdn.pixabay.com/photo/2019/03/27/10/35/cyber-4084714_1280.jpg" alt="Cyber Security Banner">
 
-        <h1>Hi 👋, I'm Tony</h1>
-        <div class="subtitle">👨‍💻 Cloud Security || Cybersecurity || Penetration Testing Enthusiast</div>
+        <h1>Tony</h1>
+        <div class="subtitle">Cloud Security & Penetration Testing Specialist</div>
 
-        <p style="text-align: center;"> 
-            <img src="https://komarev.com/ghpvc/?username=topzdomain&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views"/> 
-        </p>
-
-        <!-- Cyber Projects Section -->
-        <h2>🛡️ Cybersecurity Projects</h2>
-        <p>Here are some of my notable cybersecurity projects. Click on any card to view the repository!</p>
-        
+        <!-- Cyber Projects -->
+        <h2>🛡️ Featured Security Research</h2>
         <div class="project-grid">
             
-            <!-- Project Card 1 -->
             <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Phishing Malware">
+                <img class="card-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Cloud Security">
                 <div class="card-content">
-                    <a href="https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION" class="card-title" target="_blank">Integrating Phishing URL Detection</a>
-                    <div class="card-desc">Integrating Phishing URL Detection with GuardDuty's S3 Malware Protection to enhance bucket security.</div>
+                    <a href="https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION" class="card-title" target="_blank" rel="noopener noreferrer">S3 Phishing Detection</a>
+                    <div class="card-desc">Advanced integration of AWS GuardDuty Malware Protection with automated phishing URL analysis.</div>
                     <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION?style=social" alt="Stars"></a>
+                        <img src="https://img.shields.io/github/stars/Topzdomain/ENHANCED-S3-BUCKET-SECURITY-INTEGRATING-PHISHING-URL-DETECTION-WITH-GUARDDUTY-MALWARE-PROTECTION?style=flat&color=0969da" alt="Stars">
                     </div>
                 </div>
             </article>
 
-            <!-- Project Card 2 -->
             <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="AWS Cloud">
+                <img class="card-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="SIEM Monitoring">
                 <div class="card-content">
-                    <a href="https://github.com/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty" class="card-title" target="_blank">AWS Workload Monitoring</a>
-                    <div class="card-desc">Monitoring Workloads On AWS Using AWS GuardDuty for continuous threat detection.</div>
+                    <a href="https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS" class="card-title" target="_blank" rel="noopener noreferrer">Wazuh SIEM Deployment</a>
+                    <div class="card-desc">Architecting a scalable Wazuh SIEM cluster on AWS for real-time threat intelligence.</div>
                     <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/Monitoring-Workloads-With-AWS-GuardDuty?style=social" alt="Stars"></a>
+                        <img src="https://img.shields.io/github/stars/Topzdomain/Setting-up-Wazuh-on-AWS?style=flat&color=0969da" alt="Stars">
                     </div>
                 </div>
             </article>
 
-            <!-- Project Card 3 -->
             <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Networking Servers">
+                <img class="card-img" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" alt="Vulnerability Assessment">
                 <div class="card-content">
-                    <a href="https://github.com/Topzdomain/VPC-Peering-Connection" class="card-title" target="_blank">VPC Peering Connection</a>
-                    <div class="card-desc">Securely linking virtual private clouds on AWS to allow seamless traffic flow.</div>
+                    <a href="https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation" class="card-title" target="_blank" rel="noopener noreferrer">Nessus Remediation Lab</a>
+                    <div class="card-desc">End-to-end vulnerability management lifecycle using Tenable Nessus and automated patching.</div>
                     <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/VPC-Peering-Connection" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/VPC-Peering-Connection?style=social" alt="Stars"></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Card 4 -->
-            <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=80" alt="Identity Access">
-                <div class="card-content">
-                    <a href="https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket" class="card-title" target="_blank">Identity-Based S3 Access</a>
-                    <div class="card-desc">Granting Identity-Based Access to S3 Buckets using AWS IAM policies.</div>
-                    <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/Granting-Identity-Based-Access-to-S3-Bucket?style=social" alt="Stars"></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Card 5 -->
-            <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1562813733-b31f71025d54?auto=format&fit=crop&w=600&q=80" alt="Cyber Security">
-                <div class="card-content">
-                    <a href="https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS" class="card-title" target="_blank">Wazuh SIEM on AWS</a>
-                    <div class="card-desc">Deployed Wazuh SIEM for robust security monitoring and log analysis.</div>
-                    <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/Setting-up-Wazuh-on-AWS/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/Setting-up-Wazuh-on-AWS?style=social" alt="Stars"></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Card 6 -->
-            <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1614064641913-a520faff3ddf?auto=format&fit=crop&w=600&q=80" alt="Vulnerability Scanner">
-                <div class="card-content">
-                    <a href="https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation" class="card-title" target="_blank">Nessus Vulnerability Assessment</a>
-                    <div class="card-desc">Conducted comprehensive vulnerability assessments and remediation using Nessus.</div>
-                    <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation?style=social" alt="Stars"></a>
+                        <img src="https://img.shields.io/github/stars/Topzdomain/Using-Nessus-for-Vulnerability-Assessment-and-Remediation?style=flat&color=0969da" alt="Stars">
                     </div>
                 </div>
             </article>
 
         </div>
 
-        <!-- Data Analytics Section -->
-        <h2>📊 Data Analytics Projects</h2>
-        
-        <div class="project-grid">
-            <!-- Analytics Card 1 -->
-            <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Analytics">
-                <div class="card-content">
-                    <a href="https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis" class="card-title" target="_blank">Cyclistics Ride-Share Analysis</a>
-                    <div class="card-desc">Analyzed ride-share data to uncover user trends and business insights.</div>
-                    <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/Cyclistic-Ride-Share-Analysis/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/Cyclistic-Ride-Share-Analysis?style=social" alt="Stars"></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Analytics Card 2 -->
-            <article class="card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Dashboarding">
-                <div class="card-content">
-                    <a href="https://github.com/Topzdomain/HR_DashBoard" class="card-title" target="_blank">HR Dashboard</a>
-                    <div class="card-desc">Created a comprehensive interactive HR dashboard for staff tracking.</div>
-                    <div class="card-footer">
-                        <a href="https://github.com/Topzdomain/HR_DashBoard/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/Topzdomain/HR_DashBoard?style=social" alt="Stars"></a>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <!-- Remaining Content -->
-        <h2>🌟 What I'm Currently Working On</h2>
-        <ul>
-            <li>Enhancing my cybersecurity skills through hands-on labs and projects.</li>
-            <li>Exploring new technologies in cloud security.</li>
-            <li>Preparing for the AWS Solutions Architect Exam.</li>
-        </ul>
-
-        <h2>🛠️ Languages and Tools</h2>
-        <p class="tech-stack">
+        <div class="tech-stack">
+            <h2>🛠️ Technical Arsenal</h2>
             <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS">
             <img src="https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali Linux">
-            <img src="https://img.shields.io/badge/Oracle%20VM-F80000?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle VM">
-            <img src="https://img.shields.io/badge/Tenable%20Nessus-00A1E0?style=for-the-badge&logo=tenable&logoColor=white" alt="Tenable Nessus Scanner">
             <img src="https://img.shields.io/badge/Wazuh-4E2A8E?style=for-the-badge&logo=wazuh&logoColor=white" alt="Wazuh">
-            <img src="https://img.shields.io/badge/AWS%20Prowler-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS Prowler">
-            <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML">
             <img src="https://img.shields.io/badge/Metasploit-4E2A8E?style=for-the-badge&logo=metasploit&logoColor=white" alt="Metasploit">
             <img src="https://img.shields.io/badge/Nmap-8E4E2A?style=for-the-badge&logo=nmap&logoColor=white" alt="Nmap">
-        </p>
-
-        <h2>📊 GitHub Stats</h2>
-        <div class="stats-grid">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs?username=topzdomain&show_icons=true&locale=en&layout=compact" alt="Top Languages" />
-            <img src="https://github-readme-stats.vercel.app/api?username=topzdomain&show_icons=true&locale=en" alt="GitHub Stats" />
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=topzdomain&" alt="GitHub Streak" />
         </div>
 
-        <hr style="border: 0; border-top: 1px solid #e1e4e8; margin: 3rem 0;">
+        <h2>📊 Security Metrics</h2>
+        <div class="stats-grid">
+            <img src="https://github-readme-stats.vercel.app/api?username=topzdomain&show_icons=true&theme=transparent" alt="GitHub Stats" />
+        </div>
 
-        <h2>💬 Contact & Feedback</h2>
-        <p>If you have any questions, suggestions, or want to connect, feel free to reach out!</p>
-        <p>
-            <a href="https://linkedin.com/in/tope-tony" target="_blank">
-                <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="40" width="40" style="vertical-align: middle; margin-right: 10px;" /> <strong>Connect with me on LinkedIn</strong>
-            </a>
+        <p style="text-align: center; margin-top: 4rem;">
+            <a href="https://linkedin.com/in/tope-tony" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">Connect for Security Consultations →</a>
         </p>
         
     </div>
